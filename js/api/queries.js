@@ -13,6 +13,21 @@ const getAllTasksQuery = () => {
   };
 };
 
+const getOneTasksQuery = params => {
+  console.log("getOneTasksQuery" + params);
+  return {
+    query: `mutation {
+      getTask (taskOne: {_id: "${params}"}) {
+        _id
+        taskName
+        description
+        status
+        githubLink
+      }
+    }`
+  };
+};
+
 const createTaskQuery = params => {
   console.log(params);
   return {
@@ -30,6 +45,26 @@ const createTaskQuery = params => {
         _id
       }
     }`
+  };
+};
+
+const updateTaskQuery = params => {
+  console.log("update task");
+  console.log(params);
+  return {
+    query: `mutation {
+      updateTask (taskUpdate: {_id: "${params._id}"
+      , taskName: "${params.taskName}", 
+      description: "${params.description}", 
+      status:"Open", githubLink: "${params.githubLink}"}) {
+       _id
+       taskName
+       description
+       status
+       githubLink
+    
+     }
+   }`
   };
 };
 

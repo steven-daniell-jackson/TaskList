@@ -21,7 +21,7 @@ const createTaskList = data => {
       <span class="badge badge-sm ${data.status}">${data.status}</span>
       <div class="pull-right hidden-phone">
       <button class="btn btn-success btn-xs" onClick="completeTask()"><i class=" fa fa-check"></i></button>
-      <button class="btn btn-primary btn-xs" onClick="createFormModal('editTask')()"><i class="fa fa-pencil"></i></button>
+      <button class="btn btn-primary btn-xs" onClick="editTask(this)"><i class="fa fa-pencil"></i></button>
       <button class="btn btn-danger btn-xs" onClick="deleteTask(this)"><i class="fa fa-trash-o "></i></button>
       </div>
       </div>
